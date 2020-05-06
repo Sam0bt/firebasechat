@@ -1,0 +1,44 @@
+<html lang="en-US">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+	<title>GUEST CHAT</title>
+	<meta name="keywords" content="frend,speak,online,chat">
+	<meta name="description" content="You can send messages on this website as you wish."/>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.0.slim.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://kit.fontawesome.com/8e49e77197.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<center>
+		<h1 class="p-4 text-white" style="font-family:Quicksand;">GUEST CHAT</h1>
+		<div style="height:76%;">   
+			<div class="card-body" style="max-height:100%; overflow-y:auto;">
+				<div id="loginScreen">
+					<input style="padding:20px;" class="form-control col-6" placeholder="Username" id="kadi" onkeydown="if (event.keyCode == 13){registerMember();}"><br>
+					<a style="padding:10px;" class="btn btn-primary text-white" onclick="registerMember();">LOGİN</a>
+				</div>				
+				<div id="chatScreen" style="display:none;">	
+					<div id="messageArea"></div>
+					<div class="input-group" style="position:fixed; bottom:0px; left:0px; right:0px; margin-bottom:0px;">
+						<div class="input-group-prepend">
+							<span onclick="clean();" class="input-group-text attach_btn"><i class="fa fa-trash"></i></span>	 
+						</div>
+						<input id="msg" style="padding:20px;" class="form-control" placeholder="Write message.." onkeydown="if (event.keyCode == 13){sendMessage();}">
+						<div class="input-group-append">
+							<span onclick="sendMessage();" class="input-group-text attach_btn"><i class="fa fa-paper-plane"></i></span>
+						</div>
+					</div>												
+				</div>		
+			</div>
+		</div>
+	</center>
+	<!-- firebase database connection -->
+	<script type="text/javascript" language="javascript" src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+	<script>var config = {databaseURL: "https://sohbet-uygulamasi-1dec6.firebaseio.com"}; firebase.initializeApp(config);</script>
+	<script type="text/javascript" language="javascript" src="functions.js"></script>
+</body>
+</html> 
